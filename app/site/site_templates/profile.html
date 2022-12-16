@@ -1,20 +1,32 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-{% block content %}
+{% block content %} 
+    <section class="bg-dark text-light text-center shadow mb-20">
+        <div class="container p-5 bg-dark">
+            <div class="row">
+                <div class="d-md-flex bg-dark align-items-center justify-content-evenly">
+                    <h1 class="col text-center">{{ current_user.email }}'s user profile</h1>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<header class="hero-section">
-    <h3 class="header-text">Welcome to Coding Drones! test@gmail.com</h3>
-</header>
-
-<div class="container">
-    <h3>Here are your profile details</h3>
-    <ul class="list-group">
-        <li class="list-group-item">Email: test@gmail.com</li>
-        <li class="list-group-item">Token: </li>
-        
-         <!--TODO: Add Access Key-->
-        
-    </ul>
-</div>
-
-{% endblock content %}
+    <section class="text-center">
+    <div class="container p-10">
+        <div class="row"><br>
+            <h3 class="p-5">Here are your profile details</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Email: {{ current_user.email }}</li>
+                <li class="list-group-item">Token: {{ current_user.token }} </li> 
+            </ul>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-4"></div>
+            <div class="col-3 p-10">
+                <img src="../../static/images/undraw_by_my_car_re_g0c3.svg" class="d-flex align-items-center justify-content-center p-50 img-fluid" alt="">
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    </section>
+{% endblock %}
